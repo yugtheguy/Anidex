@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniDex - Animal Identifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AniDex</h1>
+            <p>Upload an animal image to identify it</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="imageInput" accept="image/*" hidden>
+                <div class="upload-content">
+                    <p>Click to upload or drag and drop</p>
+                    <button type="button" id="uploadBtn">Choose Image</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section" id="previewSection" style="display: none;">
+            <h3>Image Preview</h3>
+            <img id="previewImage" alt="Preview">
+            <button id="submitBtn">Submit for Analysis</button>
+        </div>
+
+        <div class="loading-section" id="loadingSection" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing image...</p>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <h3>Results</h3>
+            <div class="result-content">
+                <div class="image-container">
+                    <img id="resultImage" alt="Animal">
+                </div>
+                <div class="info-container">
+                    <h2 id="animalName"></h2>
+                    <div id="animalInfo"></div>
+                </div>
+            </div>
+            <button id="uploadAnotherBtn">Upload Another</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
