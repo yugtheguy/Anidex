@@ -4,13 +4,14 @@ import torch
 import io
 import requests
 import json
+from decouple import config  # <-- import decouple
 
 class AnimalClassifier:
     def __init__(self):
         self.model_name = "google/vit-base-patch16-224"
         self.model = ViTForImageClassification.from_pretrained(self.model_name)
         self.processor = ViTImageProcessor.from_pretrained(self.model_name)
-        self.api_key = "E+qSfZtwvX5cG55Dcmhikw==2g2E1so6YaaMRnp4"
+        self.api_key = config("NINJA_API_KEY")
         self.api_url = "https://api.api-ninjas.com/v1/animals"
         
     def classify_animal(self, image_file):

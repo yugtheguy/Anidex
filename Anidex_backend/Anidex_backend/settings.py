@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'main_app',
     'corsheaders',
 ]
+
+NINJA_API_KEY = config("NINJA_API_KEY")
 
 # Media files (user uploads)
 MEDIA_URL = '/media/'
